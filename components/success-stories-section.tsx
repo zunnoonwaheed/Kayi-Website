@@ -1,21 +1,8 @@
 "use client"
 
 import type React from "react"
-
 import { useState } from "react"
-import {
-  ChevronDown,
-  ArrowRight,
-  ExternalLink,
-  Sparkles,
-  Star,
-  Palette,
-  Zap,
-  ShoppingBag,
-  Rocket,
-  Leaf,
-  Code,
-} from "lucide-react"
+import { ChevronDown, ArrowRight, Palette, Zap, ShoppingBag, Rocket, Leaf, Code } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import {
   DropdownMenu,
@@ -32,6 +19,7 @@ interface Project {
   description: string
   expandedDescription: string
   image: string
+  expandedImage: string
   category: string
   icon: React.ReactNode
   color: string
@@ -39,150 +27,177 @@ interface Project {
   results: string[]
   duration: string
   client: string
+  status: string
 }
 
 const projects: Project[] = [
   {
     id: "cover-up-paints",
-    title: "Cover Up Paints",
-    subtitle: "Premium Paint Brand Digital Transformation",
+    title: "COVER UP PAINTS LTD.",
+    subtitle: "Social Media Aesthetic Transformation",
     description:
-      "Complete digital marketing overhaul for a leading paint manufacturer, boosting online presence and sales.",
+      "Cover Up Paints wanted to elevate their social media presence to better reflect their premium paint brand. We developed a cohesive visual strategy with consistent colors, fonts, and styling that strengthened their brand recognition.",
     expandedDescription:
-      "We transformed Cover Up Paints' digital presence with a comprehensive strategy including SEO optimization, social media marketing, and e-commerce integration. The project resulted in 300% increase in online sales and 250% growth in brand awareness across all digital channels.",
-    image: "images/kayi1.jpeg",
-    category: "Digital Marketing",
+      "Cover Up Paints wanted to elevate their social media presence to better reflect their premium paint brand. We developed a cohesive visual strategy with consistent colors, fonts, and styling that strengthened their brand recognition. The new aesthetic helped their content stand out and better connect with their target audience.",
+    image: "./images/kayi1.jpeg",
+    expandedImage: "./images/kayi1.jpeg",
+    category: "Brand Identity & Design",
     icon: <Palette className="w-6 h-6" />,
     color: "from-slate-900 to-gray-800",
-    technologies: ["SEO", "Social Media", "Google Ads", "Analytics"],
-    results: ["300% Sales Increase", "250% Brand Growth", "150% Web Traffic"],
-    duration: "6 months",
+    technologies: ["Canva", "Adobe Photoshop", "Instagram", "Facebook"],
+    results: ["65% More Engagement", "40% Follower Growth", "Consistent Brand Look"],
+    duration: "1 month",
     client: "Cover Up Paints Ltd.",
+    status: "COMPLETED",
   },
   {
-    id: "rejuuv",
-    title: "Rejuuv",
-    subtitle: "Beauty & Wellness E-commerce Platform",
-    description: "Modern Shopify store development for a premium beauty brand with custom features and seamless UX.",
+    id: "rejuuv-beauty",
+    title: "REJUUV BEAUTY",
+    subtitle: "Complete Beauty Brand Build & E-commerce Platform",
+    description:
+      "We built Rejuuv from the ground up, creating everything from their brand identity to their complete e-commerce platform. This included designing their logo and visual identity, developing a custom Shopify store, managing their social media presence, and running targeted marketing campaigns.",
     expandedDescription:
-      "Built a stunning Shopify store for Rejuuv with custom product configurators, subscription management, and advanced inventory tracking. Integrated with multiple payment gateways and implemented a loyalty program that increased customer retention by 180% while maintaining a 95% page speed score.",
-    image: "images/kayi2.jpeg",
-    category: "Shopify Development",
+      "We built Rejuuv from the ground up, creating everything from their brand identity to their complete e-commerce platform. This included designing their logo and visual identity, developing a custom Shopify store, managing their social media presence, and running targeted marketing campaigns. We also handled product photography and lifestyle content creation to showcase their beauty and wellness products.",
+    image: "./images/kayi2.jpeg",
+    expandedImage: "./images/kayi-success1.jpeg",
+    category: "E-commerce Development",
     icon: <ShoppingBag className="w-6 h-6" />,
     color: "from-slate-900 to-gray-800",
-    technologies: ["Shopify Plus", "Liquid", "React", "Node.js"],
-    results: ["180% Customer Retention", "95% Page Speed", "40% Conversion Rate"],
-    duration: "4 months",
+    technologies: ["Shopify Plus", "Adobe Creative Suite", "Instagram & Facebook", "Facebook Ads"],
+    results: [
+      "5000+ Products Sold",
+      "85% Customer Satisfaction",
+      "220% Social Media Growth",
+      "3.2x Return on Ad Spend",
+    ],
+    duration: "4 months - Ongoing",
     client: "Rejuuv Beauty",
+    status: "Ongoing",
   },
   {
-    id: "pel-sd",
-    title: "PEL SD",
-    subtitle: "Enterprise Resource Planning System",
-    description: "Full-stack custom solution for supply chain management and inventory optimization.",
+    id: "pel-paints",
+    title: "PEL Paints",
+    subtitle: "Social Media Content Creation",
+    description:
+      "PEL Paints wanted to enhance their social media presence to better showcase their paint brand and products. We created a series of professional social media posts with consistent branding that highlighted their paint solutions and quality.",
     expandedDescription:
-      "Developed a comprehensive ERP system for PEL SD with real-time inventory tracking, automated procurement, and advanced analytics dashboard. The system processes over 10,000 transactions daily and reduced operational costs by 35% while maintaining 99.9% uptime.",
-    image: "images/kayi3.jpeg",
-    category: "Custom Solutions",
+      "PEL Paints wanted to enhance their social media presence to better showcase their paint brand and products. We created a series of professional social media posts with consistent branding that highlighted their paint solutions and quality. The content helped establish their digital presence and improved engagement with their target customers.",
+    image: "./images/kayi3.jpeg",
+    expandedImage: "./images/kayi-success2.jpeg",
+    category: "SEO & Content Marketing",
     icon: <Zap className="w-6 h-6" />,
     color: "from-slate-900 to-gray-800",
-    technologies: ["React", "Node.js", "PostgreSQL", "AWS"],
-    results: ["35% Cost Reduction", "99.9% Uptime", "10K+ Daily Transactions"],
-    duration: "8 months",
-    client: "PEL SD Corporation",
+    technologies: ["Canva", "Adobe Photoshop", "Instagram", "Facebook"],
+    results: ["55% More Engagement", "35% Follower Growth", "Professional Brand Image"],
+    duration: "1 month",
+    client: "PEL Paints",
+    status: "Completed",
+  },
+  {
+    id: "saint-draper",
+    title: "SAINT DRAPER",
+    subtitle: "Luxury Leather Brand Development",
+    description:
+      "We built Saint Draper from the ground up as a leather brand specializing in wallets and card holders. Our work included creating their complete brand identity and logo design, developing stunning 3D product models for marketing, and managing their social media presence.",
+    expandedDescription:
+      "We built Saint Draper from the ground up as a leather brand specializing in wallets and card holders. Our work included creating their complete brand identity and logo design, developing stunning 3D product models for marketing, and managing their social media presence. We established their brand positioning in the quality leather goods market with sophisticated visual content.",
+    image: "./images/kayi4.jpeg",
+    expandedImage: "./images/kayi-success4.jpeg",
+    category: "Brand Identity & Design",
+    icon: <Rocket className="w-6 h-6" />,
+    color: "from-slate-900 to-gray-800",
+    technologies: ["Blender 3D", "Adobe Creative Suite", "Instagram & Facebook", "Brand Design Tools"],
+    results: [
+      "Complete Brand Launch",
+      "180% Social Engagement",
+      "Quality Market Positioning",
+      "3D Product Visualization",
+    ],
+    duration: "4 months",
+    client: "Saint Draper",
+    status: "COMPLETED",
   },
   {
     id: "mirakl",
-    title: "Mirakl",
-    subtitle: "Multi-Vendor Marketplace Platform",
-    description: "Scalable full-stack marketplace solution with advanced vendor management and payment processing.",
+    title: "MIRAKL",
+    subtitle: "Complete Brand & Product Development",
+    description:
+      "We developed Mirakl as a complete skincare and antibacterial towel brand from concept to market. Our comprehensive approach included creating their logo and brand identity, designing product packaging that stands out on shelves, building their e-commerce website, and managing their social media presence.",
     expandedDescription:
-      "Created a robust marketplace platform for Mirakl with multi-vendor support, automated commission calculations, and integrated payment processing. Features include real-time chat, advanced search, and comprehensive analytics for both vendors and administrators, supporting 500+ active vendors.",
-    image: "images/kayi4.jpeg",
-    category: "Full Stack Development",
-    icon: <Rocket className="w-6 h-6" />,
-    color: "from-slate-900 to-gray-800",
-    technologies: ["Next.js", "TypeScript", "MongoDB", "Stripe"],
-    results: ["500+ Active Vendors", "50K+ Products", "99.8% Uptime"],
-    duration: "10 months",
-    client: "Mirakl Marketplace",
-  },
-  {
-    id: "wellness-hub",
-    title: "Wellness Hub",
-    subtitle: "Health & Fitness WordPress Portal",
-    description: "Custom WordPress development for a comprehensive health and wellness information portal.",
-    expandedDescription:
-      "Built a feature-rich WordPress site for Wellness Hub with custom post types, advanced search functionality, and membership integration. Includes appointment booking system, nutrition calculators, and a community forum that serves 25,000+ active users monthly with 85% engagement rate.",
-    image: "images/kayi5.jpeg",
-    category: "WordPress Development",
+      "We developed Mirakl as a complete skincare and antibacterial towel brand from concept to market. Our comprehensive approach included creating their logo and brand identity, designing product packaging that stands out on shelves, building their e-commerce website, and managing their social media presence. We established their brand positioning in the health and wellness market.",
+    image: "./images/kayi5.jpeg",
+    expandedImage: "./images/kayi-success3.jpeg",
+    category: "Brand Identity & Design",
     icon: <Leaf className="w-6 h-6" />,
     color: "from-slate-900 to-gray-800",
-    technologies: ["WordPress", "PHP", "MySQL", "WooCommerce"],
-    results: ["25K+ Monthly Users", "85% User Engagement", "200% Content Growth"],
-    duration: "5 months",
-    client: "Wellness Hub Inc.",
+    technologies: ["Adobe Creative Suite", "WordPress", "Instagram & Facebook", "Packaging Design"],
+    results: [
+      "Complete Brand Launch",
+      "Professional Packaging Design",
+      "Strong Online Presence",
+      "Market Ready Products",
+    ],
+    duration: "3 months",
+    client: "Mirakl",
+    status: "COMPLETED",
   },
 ]
 
 const categories = [
   "All Projects",
-  "Digital Marketing",
+  "Business Automation",
+  "Performance Marketing",
   "Web Development",
-  "Shopify Development",
-  "Custom Solutions",
-  "Full Stack Development",
-  "WordPress Development",
+  "Mobile App Development",
+  "Custom Software Solutions",
+  "E-commerce Development",
+  "Business Outsourcing",
+  "AI & Automation Tools",
+  "CRM & Sales Systems",
+  "Brand Identity & Design",
+  "SEO & Content Marketing",
 ]
 
 export default function SuccessStoriesSection() {
   const [selectedCategory, setSelectedCategory] = useState("All Projects")
+  const [expandedCard, setExpandedCard] = useState<string | null>(null)
   const [hoveredCard, setHoveredCard] = useState<string | null>(null)
-  const [isGridHovered, setIsGridHovered] = useState(false)
 
   const filteredProjects =
     selectedCategory === "All Projects" ? projects : projects.filter((project) => project.category === selectedCategory)
 
+  const handleReadMore = (projectId: string) => {
+    setExpandedCard(expandedCard === projectId ? null : projectId)
+  }
+
   return (
-    <section className="py-24 px-4 bg-gradient-to-br from-gray-50 via-white to-slate-50 relative overflow-hidden">
-      {/* Sophisticated Background Pattern */}
+    <section className="py-10 md:py-24 px-4 bg-white relative overflow-hidden">
+      {/* Background Pattern - Adjusted opacity for white background */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#f1f5f9_1px,transparent_1px),linear-gradient(to_bottom,#f1f5f9_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-30"></div>
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-gradient-to-br from-blue-100/20 to-purple-100/20 rounded-full blur-3xl"></div>
         <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-gradient-to-br from-purple-100/20 to-pink-100/20 rounded-full blur-3xl"></div>
       </div>
 
       <div className="max-w-7xl mx-auto relative">
-        {/* Sophisticated Header */}
-        <div className="text-center mb-20">
-          <div className="inline-flex items-center gap-3 bg-white/80 backdrop-blur-sm px-8 py-4 rounded-2xl border border-gray-200/50 shadow-lg mb-8">
-            <div className="w-2 h-2 bg-black rounded-full animate-pulse"></div>
-            <Sparkles className="w-5 h-5 text-gray-700" />
-            <span className="text-gray-800 font-semibold tracking-wide">SUCCESS STORIES</span>
-            <div className="w-2 h-2 bg-black rounded-full animate-pulse"></div>
-          </div>
-
-          <h2 className="text-6xl md:text-7xl font-bold text-gray-900 mb-8 tracking-tight">
-            Our Success
-            <span className="block bg-gradient-to-r from-gray-900 via-gray-700 to-gray-900 bg-clip-text text-transparent">
-              Stories
-            </span>
+        {/* Header */}
+        <div className="text-center mb-8 md:mb-20">
+          <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold text-black mb-6 md:mb-8 tracking-tight">
+            Our Success Stories
           </h2>
-
-          <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed font-light">
-            Discover how we've helped businesses transform their digital presence and achieve remarkable growth through
-            <span className="font-semibold text-gray-800"> innovative solutions</span> and
-            <span className="font-semibold text-gray-800"> strategic thinking</span>
+          <p className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed font-light px-4 md:px-0">
+            Every business has potential. Here's how we've helped companies unlock theirs through{" "}
+            <span className="font-semibold text-gray-800">custom solutions</span> that actually{" "}
+            <span className="font-semibold text-gray-800">move the needle</span>
           </p>
         </div>
 
-        {/* Refined Filter Section */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-8 mb-16">
+        {/* Filter Section */}
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-8 md:mb-16">
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button
                 variant="outline"
-                className="min-w-[240px] justify-between bg-white/90 backdrop-blur-sm border border-gray-300 hover:border-gray-900 transition-all duration-300 shadow-lg hover:shadow-xl rounded-2xl h-14 font-semibold text-gray-700 hover:text-gray-900"
+                className="min-w-[240px] justify-between bg-white/90 backdrop-blur-sm border border-gray-300 hover:border-gray-900 transition-all duration-300 shadow-lg hover:shadow-xl rounded-2xl h-11 md:h-14 font-semibold text-gray-700 hover:text-gray-900"
               >
                 <span className="flex items-center gap-3">
                   <Code className="w-4 h-4" />
@@ -200,7 +215,7 @@ export default function SuccessStoriesSection() {
                   <DropdownMenuRadioItem
                     key={category}
                     value={category}
-                    className="cursor-pointer rounded-xl mx-2 my-1 font-semibold text-gray-700 hover:text-gray-900 py-3"
+                    className="cursor-pointer rounded-xl mx-2 my-1 font-semibold text-gray-700 hover:text-gray-900 py-2.5"
                   >
                     {category}
                   </DropdownMenuRadioItem>
@@ -210,174 +225,177 @@ export default function SuccessStoriesSection() {
           </DropdownMenu>
         </div>
 
-        {/* Projects Grid Container with Hover Detection */}
+        {/* Projects Grid Container */}
         <div
-          className="relative"
-          onMouseEnter={() => setIsGridHovered(true)}
-          onMouseLeave={() => setIsGridHovered(false)}
+          className={`grid gap-4 md:gap-8 transition-all duration-500 ${
+            expandedCard ? "grid-cols-1" : "grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+          }`}
         >
-          {/* Sophisticated Projects Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredProjects.map((project) => (
+          {filteredProjects.map((project) => {
+            const isExpanded = expandedCard === project.id
+            const isHidden = expandedCard && !isExpanded
+
+            return (
               <div
                 key={project.id}
-                className={`group cursor-pointer transition-all duration-700 ease-out ${
-                  hoveredCard === project.id
-                    ? "scale-105 z-30 relative"
-                    : hoveredCard && hoveredCard !== project.id
-                      ? "scale-95 opacity-40 blur-sm"
-                      : "hover:scale-[1.02]"
-                }`}
-                onMouseEnter={() => setHoveredCard(project.id)}
-                onMouseLeave={() => setHoveredCard(null)}
+                className={`group cursor-pointer transition-all duration-500 ease-out ${
+                  isHidden ? "opacity-0 pointer-events-none h-0 overflow-hidden" : ""
+                } ${isExpanded ? "col-span-full" : "hover:scale-[1.02]"} `}
+                onMouseEnter={() => !isExpanded && setHoveredCard(project.id)}
+                onMouseLeave={() => !isExpanded && setHoveredCard(null)}
               >
                 <div
                   className={`bg-white/90 backdrop-blur-sm rounded-3xl overflow-hidden transition-all duration-700 border h-full flex flex-col ${
-                    hoveredCard === project.id
-                      ? "shadow-2xl border-gray-900/20 ring-1 ring-gray-900/10"
+                    isExpanded
+                      ? "shadow-2xl border-gray-900/20 ring-1 ring-gray-900/10 flex-col md:flex-row"
                       : "shadow-lg border-gray-200/50 hover:shadow-xl hover:border-gray-300"
                   }`}
                 >
-                  {/* Sophisticated Image Section */}
-                  <div className="relative overflow-hidden h-72">
+                  {/* Image Section */}
+                  <div
+                    className={`relative overflow-hidden ${
+                      isExpanded
+                        ? "w-full md:w-2/5 h-48 md:h-auto min-h-[200px] md:min-h-[400px]"
+                        : "h-40 md:h-64 w-full"
+                    }`}
+                  >
                     <img
-                      src={project.image || "/placeholder.svg?height=400&width=600"}
+                      src={isExpanded ? project.expandedImage : project.image || "/placeholder.svg"}
                       alt={project.title}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                      className={`w-full h-full object-cover transition-transform duration-700 ${
+                        isExpanded ? "rounded-t-3xl md:rounded-l-3xl md:rounded-tr-none" : "rounded-t-3xl"
+                      } ${!isExpanded ? "group-hover:scale-110" : ""}`}
                     />
-
-                    {/* Elegant Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
-                    {/* Minimalist Category Badge */}
-                    <div className="absolute top-6 right-6">
-                      <span className="inline-block px-4 py-2 bg-white/95 backdrop-blur-sm text-gray-900 text-sm font-bold rounded-full shadow-lg border border-white/50">
-                        {project.category}
-                      </span>
-                    </div>
-
-                    {/* Clean SVG Icon */}
-                    <div className="absolute top-6 left-6">
-                      <div className="w-16 h-16 bg-white/95 backdrop-blur-sm rounded-2xl flex items-center justify-center shadow-lg border border-white/50">
-                        <div className="text-gray-900">{project.icon}</div>
-                      </div>
-                    </div>
-
-                    {/* Sophisticated Rating */}
-                    <div className="absolute bottom-6 left-6 flex items-center gap-2 bg-white/95 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg">
-                      <div className="flex items-center gap-1">
-                        {[...Array(5)].map((_, i) => (
-                          <Star key={i} className="w-3 h-3 fill-gray-900 text-gray-900" />
-                        ))}
-                      </div>
-                      <span className="text-sm font-bold text-gray-900">5.0</span>
-                    </div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
                   </div>
 
-                  {/* Refined Content Section */}
-                  <div className="p-8 flex-1 flex flex-col">
-                    <div className="flex-1">
-                      {/* Client Info */}
-                      <div className="flex items-center gap-2 mb-4">
-                        <div className="w-2 h-2 bg-gray-900 rounded-full"></div>
-                        <span className="text-sm font-semibold text-gray-600 uppercase tracking-wider">
-                          {project.client}
-                        </span>
-                        <div className="w-2 h-2 bg-gray-900 rounded-full"></div>
-                        <span className="text-sm font-semibold text-gray-600">{project.duration}</span>
-                      </div>
+                  {/* Content Section */}
+                  <div className={`p-4 md:p-8 flex-1 flex flex-col ${isExpanded ? "w-full md:w-3/5" : "w-full"}`}>
+                    <h3 className="text-lg md:text-2xl font-bold text-gray-900 mb-2 group-hover:text-gray-700 transition-colors duration-300">
+                      {project.title}
+                    </h3>
+                    <h4 className="text-sm md:text-lg font-semibold text-gray-600 mb-3 line-clamp-2">
+                      {project.subtitle}
+                    </h4>
 
-                      <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-gray-700 transition-colors duration-300">
-                        {project.title}
-                      </h3>
-                      <h4 className="text-lg font-semibold text-gray-600 mb-6 line-clamp-2">{project.subtitle}</h4>
-
-                      {/* Dynamic Description */}
-                      <div
-                        className={`transition-all duration-500 overflow-hidden ${
-                          hoveredCard === project.id ? "max-h-96" : "max-h-20"
+                    {/* Dynamic Description */}
+                    <div
+                      className={`transition-all duration-500 overflow-hidden ${
+                        isExpanded ? "max-h-full" : "max-h-[72px]"
+                      }`}
+                    >
+                      <p
+                        className={`text-xs md:text-base text-gray-600 leading-relaxed mb-4 font-light flex-1 ${
+                          !isExpanded ? "line-clamp-3" : ""
                         }`}
                       >
-                        <p className="text-gray-600 leading-relaxed mb-6 font-light">
-                          {hoveredCard === project.id ? project.expandedDescription : project.description}
-                        </p>
+                        {isExpanded ? project.expandedDescription : project.description}
+                      </p>
 
-                        {/* Technologies - Enhanced */}
-                        {hoveredCard === project.id && (
-                          <div className="mb-6 animate-in fade-in duration-300">
-                            <h5 className="font-bold text-gray-900 mb-3 text-sm uppercase tracking-wider">
-                              Technologies:
-                            </h5>
-                            <div className="flex flex-wrap gap-2">
-                              {project.technologies.map((tech) => (
-                                <span
-                                  key={tech}
-                                  className="px-3 py-1 bg-gray-100 text-gray-800 text-sm rounded-full font-semibold border border-gray-200"
-                                >
-                                  {tech}
-                                </span>
-                              ))}
-                            </div>
+                      {/* Technologies - Enhanced */}
+                      {isExpanded && (
+                        <div className="mb-4 animate-in fade-in duration-300">
+                          <h5 className="font-bold text-gray-900 mb-2 text-sm uppercase tracking-wider">
+                            Technologies Used:
+                          </h5>
+                          <div className="flex flex-wrap gap-1.5">
+                            {project.technologies.map((tech) => (
+                              <span
+                                key={tech}
+                                className="px-2.5 py-0.5 bg-gray-100 text-gray-800 text-xs rounded-full font-semibold border border-gray-200"
+                              >
+                                {tech}
+                              </span>
+                            ))}
                           </div>
-                        )}
+                        </div>
+                      )}
 
-                        {/* Results - Refined */}
-                        {hoveredCard === project.id && (
-                          <div className="mb-6 animate-in fade-in duration-500">
-                            <h5 className="font-bold text-gray-900 mb-3 text-sm uppercase tracking-wider">
-                              Key Results:
-                            </h5>
-                            <div className="space-y-2">
-                              {project.results.map((result) => (
-                                <div key={result} className="flex items-center gap-3">
-                                  <div className="w-1.5 h-1.5 bg-gray-900 rounded-full"></div>
-                                  <span className="text-sm text-gray-700 font-semibold">{result}</span>
-                                </div>
-                              ))}
-                            </div>
+                      {isExpanded && (
+                        <div className="mb-4 animate-in fade-in duration-500">
+                          <h5 className="font-bold text-gray-900 mb-2 text-sm uppercase tracking-wider">
+                            Key Results:
+                          </h5>
+                          <div className="grid gap-1.5">
+                            {project.results.map((result) => (
+                              <div key={result} className="flex items-center gap-2">
+                                <div className="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
+                                <span className="text-gray-700 font-semibold text-xs">{result}</span>
+                              </div>
+                            ))}
                           </div>
-                        )}
-                      </div>
+                        </div>
+                      )}
                     </div>
 
-                    {/* Sophisticated Action Section */}
-                    <div className="flex items-center justify-between pt-6 border-t border-gray-200 mt-auto">
-                
-
-                      {/* Success Indicator */}
-                      <div className="flex items-center gap-2">
-                        <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                        <span className="text-sm font-bold text-gray-900 uppercase tracking-wider">Success</span>
+                    {/* Action Section */}
+                    <div className="flex items-center justify-between pt-3 border-t border-gray-200 mt-auto">
+                      <div className="flex items-center gap-1.5">
+                        <div
+                          className={`w-1.5 h-1.5 rounded-full ${
+                            project.status === "Ongoing" ? "bg-yellow-500" : "bg-green-500"
+                          }`}
+                        ></div>
+                        <span className="text-xs font-bold text-gray-900 uppercase tracking-wider">
+                          {project.status}
+                        </span>
                       </div>
+                      <Button
+                        onClick={() => handleReadMore(project.id)}
+                        variant={isExpanded ? "default" : "ghost"}
+                        size={isExpanded ? "lg" : "sm"}
+                        className={`font-bold group/btn transition-all duration-300 ${
+                          isExpanded
+                            ? "bg-[#cf21c3] text-white hover:bg-[#b91c9e] px-6 py-3 rounded-xl shadow-lg hover:shadow-xl transform hover:scale-[1.02] text-sm tracking-wide border border-[#cf21c3]/20"
+                            : "text-gray-900 hover:text-gray-700 text-xs"
+                        }`}
+                      >
+                        {isExpanded ? (
+                          <span className="flex items-center gap-2">
+                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                            </svg>
+                            Read Less
+                          </span>
+                        ) : (
+                          <>
+                            Read More
+                            <ArrowRight className="w-3 h-3 ml-1.5 transition-transform group-hover/btn:translate-x-1" />
+                          </>
+                        )}
+                      </Button>
                     </div>
                   </div>
                 </div>
               </div>
-            ))}
-          </div>
-
-          {/* View More Case Studies Button - Appears on Grid Hover */}
-          <div
-            className={`flex justify-center mt-12 transition-all duration-500 ${
-              isGridHovered ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-            }`}
-          >
-      
-          </div>
+            )
+          })}
         </div>
 
-        {/* Elegant Empty State */}
+        {/* Empty State */}
         {filteredProjects.length === 0 && (
-          <div className="text-center py-20">
-            <div className="w-32 h-32 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-8 border border-gray-200">
-              <Code className="w-12 h-12 text-gray-400" />
+          <div className="text-center py-16">
+            <div className="w-24 h-24 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6 border border-gray-200">
+              <Code className="w-10 h-10 text-gray-400" />
             </div>
-            <h3 className="text-3xl font-bold text-gray-900 mb-4">No Projects Found</h3>
-            <p className="text-gray-600 text-lg max-w-md mx-auto font-light">
+            <h3 className="text-2xl font-bold text-gray-900 mb-3">No Projects Found</h3>
+            <p className="text-base text-gray-600 max-w-md mx-auto font-light">
               No projects found in the selected category. Try selecting a different filter to explore our work.
             </p>
           </div>
         )}
+
+        {/* CTA Section */}
+        <div className="text-center mt-16 md:mt-24">
+          <Button
+            asChild
+            className="bg-[#cf21c3] hover:bg-[#b91c9e] text-white font-semibold px-8 py-6 rounded-full text-lg shadow-lg hover:shadow-xl transform hover:scale-[1.02] transition-all duration-300"
+          >
+            <a href="https://calendly.com/saadalii/kayidigital" target="_blank" rel="noopener noreferrer">
+              Book a Free Consultation
+            </a>
+          </Button>
+        </div>
       </div>
     </section>
   )

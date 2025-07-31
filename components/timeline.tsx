@@ -1,4 +1,5 @@
 "use client"
+
 import { useEffect, useRef, useState } from "react"
 import { motion } from "framer-motion"
 import { Check } from "lucide-react"
@@ -7,33 +8,27 @@ export default function ProfessionalTimeline() {
   const steps = [
     {
       title: "Discovery",
-      description: "Understanding your vision and goals through comprehensive research .",
+      description: "We understand where you are and where you want to go.",
       duration: "1-2 weeks",
       number: "01",
     },
     {
-      title: "Design",
-      description: "Creating beautiful, user-centric interfaces with interactive prototypes.",
+      title: "Strategy",
+      description: "We map out exactly how we're going to get you there.",
       duration: "2-3 weeks",
       number: "02",
     },
     {
-      title: "Development",
-      description: "Building with clean, scalable code using modern technologies.",
+      title: "Implementation",
+      description: "This is where we actually build what you need.",
       duration: "4-6 weeks",
       number: "03",
     },
     {
-      title: "Testing",
-      description: "Ensuring flawless performance across all devices and scenarios.",
-      duration: "1-2 weeks",
-      number: "04",
-    },
-    {
-      title: "Launch",
-      description: "Seamless deployment with ongoing support for continued success.",
+      title: "Growth",
+      description: "We stay involved to make sure everything keeps working well.",
       duration: "Ongoing",
-      number: "05",
+      number: "04",
     },
   ]
 
@@ -46,7 +41,6 @@ export default function ProfessionalTimeline() {
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768)
     }
-
     checkMobile()
     window.addEventListener("resize", checkMobile)
     return () => window.removeEventListener("resize", checkMobile)
@@ -94,16 +88,16 @@ export default function ProfessionalTimeline() {
               <h2 className="text-3xl font-light mb-3 text-gray-700">
                 <span className="font-semibold text-[#000000]">Our Process</span>
               </h2>
-              <p className="text-sm text-gray-600">A streamlined approach to bringing your ideas to life</p>
+              <p className="text-sm text-gray-600">
+                From initial discovery to ongoing optimization, we guide your business through proven systems that
+                deliver sustainable growth
+              </p>
             </motion.div>
           </div>
 
           {/* Mobile Timeline */}
           <div className="relative">
-            {/* Vertical Line */}
             <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-gray-200" />
-
-            {/* Progress Line */}
             <motion.div
               className="absolute left-6 top-0 w-0.5 bg-[#cf21c3] origin-top"
               animate={{
@@ -112,7 +106,6 @@ export default function ProfessionalTimeline() {
               transition={{ duration: 0.8, ease: "easeInOut" }}
             />
 
-            {/* Steps */}
             <div className="space-y-8">
               {steps.map((step, index) => {
                 const isActive = index === currentStep
@@ -126,7 +119,6 @@ export default function ProfessionalTimeline() {
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                     className="relative flex items-start"
                   >
-                    {/* Dot */}
                     <motion.div
                       onClick={() => handleStepClick(index)}
                       animate={{ scale: isActive ? 1.1 : 1 }}
@@ -148,7 +140,6 @@ export default function ProfessionalTimeline() {
                       </div>
                     </motion.div>
 
-                    {/* Card */}
                     <motion.div
                       animate={{ scale: isActive ? 1.02 : 1 }}
                       transition={{ duration: 0.3 }}
@@ -169,9 +160,7 @@ export default function ProfessionalTimeline() {
                           {step.duration}
                         </span>
                       </div>
-
                       <p className="text-sm text-gray-600 leading-relaxed mb-3">{step.description}</p>
-
                       <div className="space-y-2">
                         <div className="flex items-center justify-between">
                           <span className="text-xs font-medium text-gray-500">
@@ -217,55 +206,62 @@ export default function ProfessionalTimeline() {
               />
             ))}
           </div>
+
+          {/* CTA Button */}
+          <div className="flex justify-center mt-12">
+            <a
+              href="https://calendly.com/saadalii/kayidigital"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-[#cf21c3] text-white text-sm font-semibold px-6 py-3 rounded-full shadow-lg hover:bg-[#b91aad] transition-all duration-300"
+            >
+              Book a Free Consultation
+            </a>
+          </div>
         </div>
       </section>
     )
   }
 
-  // Desktop Layout (original with improvements)
+  // Desktop Layout
   return (
     <section className="py-20 px-6 bg-white">
       <div className="max-w-7xl mx-auto">
-        {/* Header */}
         <div className="text-center mb-16">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
             <h2 className="text-4xl lg:text-6xl font-light mb-3 text-gray-700">
               <span className="font-semibold text-[#000000]">Our Process</span>
             </h2>
             <p className="text-base text-gray-600 max-w-xl mx-auto">
-              A streamlined approach to bringing your ideas to life
+              From initial discovery to ongoing optimization, we guide your business through proven systems that deliver
+              sustainable growth
             </p>
           </motion.div>
         </div>
 
         <div className="timeline-container relative">
-          {/* Main Line */}
           <div className="absolute top-1/2 left-0 right-0 h-px bg-gray-200 transform -translate-y-1/2 z-10" />
 
-          {/* Progress Line */}
           {dotX.length > 0 && (
-            <motion.div
-              className="absolute top-1/2 h-px bg-[#cf21c3] transform -translate-y-1/2 z-20"
-              animate={{
-                width: currentStep === 0 ? 0 : dotX[currentStep] - dotX[0],
-                x: dotX[0] || 0,
-              }}
-              transition={{ duration: 0.8, ease: "easeInOut" }}
-            />
+            <>
+              <motion.div
+                className="absolute top-1/2 h-px bg-[#cf21c3] transform -translate-y-1/2 z-20"
+                animate={{
+                  width: currentStep === 0 ? 0 : dotX[currentStep] - dotX[0],
+                  x: dotX[0] || 0,
+                }}
+                transition={{ duration: 0.8, ease: "easeInOut" }}
+              />
+              <motion.div
+                className="absolute top-1/2 w-3 h-3 bg-[#cf21c3] rounded-full transform -translate-y-1/2 z-30"
+                animate={{ x: dotX[currentStep] - 6 }}
+                transition={{ duration: 0.8, ease: "easeInOut" }}
+              />
+            </>
           )}
 
-          {/* Progress Dot */}
-          {dotX.length > 0 && (
-            <motion.div
-              className="absolute top-1/2 w-3 h-3 bg-[#cf21c3] rounded-full transform -translate-y-1/2 z-30"
-              animate={{ x: dotX[currentStep] - 6 }}
-              transition={{ duration: 0.8, ease: "easeInOut" }}
-            />
-          )}
-
-          {/* Timeline Steps */}
           <div className="relative z-40 py-16">
-            <div className="grid grid-cols-5 gap-8 lg:gap-16">
+            <div className="grid grid-cols-4 gap-8 lg:gap-16">
               {steps.map((step, index) => {
                 const isBelow = index % 2 !== 0
                 const isActive = index === currentStep
@@ -329,7 +325,6 @@ export default function ProfessionalTimeline() {
                       </div>
                     )}
 
-                    {/* Dot */}
                     <motion.div
                       ref={(el) => (dotRefs.current[index] = el)}
                       onClick={() => handleStepClick(index)}
@@ -387,6 +382,18 @@ export default function ProfessionalTimeline() {
               }`}
             />
           ))}
+        </div>
+
+        {/* CTA Button */}
+        <div className="flex justify-center mt-12">
+          <a
+            href="https://calendly.com/saadalii/kayidigital"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-[#cf21c3] text-white text-base font-semibold px-6 py-3 rounded-full shadow-lg hover:bg-[#b91aad] transition-all duration-300"
+          >
+            Book a Free Consultation
+          </a>
         </div>
       </div>
     </section>
